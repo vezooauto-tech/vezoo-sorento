@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный осмотр KIA Sorento | Vezooauto</title>
+    <style>
+        /* Обнуление стилей */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0e1621; /* Фирменный темный цвет Telegram */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Мягкое свечение на фоне */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(36,161,222,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Контейнер карточки */
+        .card {
+            background: rgba(23, 33, 43, 0.85); /* Цвет блоков в ТГ */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            animation: fadeIn 0.6s ease-out-in;
+        }
+
+        /* Логотип или Бренд */
+        .brand {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #24a1de; /* Цвет Telegram */
+            margin-bottom: 20px;
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        /* Описание */
+        p {
+            font-size: 15px;
+            color: #7f91a4;
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        /* Кнопка с ховером */
+        .tg-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 24px;
+            background-color: #24a1de;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 15px rgba(36, 161, 222, 0.3);
+        }
+
+        /* Тот самый Эффект Ховера (и фокуса при тапе на мобильном) */
+        .tg-button:hover, .tg-button:active {
+            background-color: #2296cf;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(36, 161, 222, 0.5);
+        }
+
+        /* Иконка Telegram внутри кнопки */
+        .tg-button svg {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="brand">Vezooauto</div>
+        <h1>Полный осмотр<br>KIA Sorento 🇰🇷</h1>
+        <p>Эксклюзивные материалы с проверки в Южной Корее: 8 видео, скрытые дефекты и подробный фотоотчет всех узлов.</p>
+        
+        <!-- КНОПКА: замените "ваше_имя_канала" на реальный юзернейм вашего ТГ без знака @ -->
+        <a href="tg://resolve?domain=vezooauto/4746" class="tg-button" id="tgLink">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.62.15-.15 2.7-2.48 2.75-2.7.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.21-.03-.1.02-1.62 1.02-4.57 3.02-.43.3-.82.45-1.18.44-.39-.01-1.15-.22-1.71-.41-.69-.23-1.24-.35-1.19-.74.03-.2.3-.4.81-.61 3.18-1.38 5.3-2.3 6.36-2.75 3.03-1.29 3.66-1.51 4.07-1.51.09 0 .29.02.42.13.11.09.14.21.15.3-.01.06-.01.14-.02.17z"/>
+            </svg>
+            Смотреть в Telegram
+        </a>
+    </div>
+
+    <script>
+        // Скрипт автоматического фолбека
+        document.getElementById('tgLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            const tgUrl = this.getAttribute('href');
+            // Обычная http-ссылка на случай, если приложение не открылось
+            const webUrl = "https://t.me/vezooauto/4746"; 
+            
+            // Пробуем открыть приложение через tg:// протокол
+            window.location.href = tgUrl;
+            
+            // Если через 1.5 секунды пользователь остался на странице, открываем веб-версию
+            setTimeout(function() {
+                window.location.href = webUrl;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
